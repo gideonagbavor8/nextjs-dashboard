@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: 'Customers',
 };
 
+// This page depends on a live database call. Prevent static prerendering
+// during build to avoid export/prerender errors when the DB isn't available.
+export const dynamic = 'force-dynamic';
+
 export default async function Page({
   searchParams,
 }: {
